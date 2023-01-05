@@ -14,4 +14,8 @@ gitignore
 user: grotery
 pass: B69QeofR4yj71KAO
 
+git
+git config --global user.email "dinhhuyhoangxt@mail.com"
+git config --global user.name "Hoangxt"
+
 <!-- Front -->
