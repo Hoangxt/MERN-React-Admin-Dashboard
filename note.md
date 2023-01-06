@@ -29,3 +29,5 @@ ctrl+k ctrl+g
 - font
 
 redux toolkit to set theme
+
+## focus main to BackEnd
