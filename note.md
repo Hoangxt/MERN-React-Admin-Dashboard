@@ -43,3 +43,13 @@ add data in index.js file[root]
 - go to state in redux create api endpoint => create Product Page => get api
 
 process: Model => Controller => Route => State => Component
+
+## Bug in state file [index.js]
+
+# Customer
+
+- create customer model
+- create customer controller
+- create customer route
+- create customer state [call api]
+- create customer component
