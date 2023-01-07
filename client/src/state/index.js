@@ -5,7 +5,7 @@ const initialState = {
   userId: "63701cc1f03239b7f700000e",
 };
 
-export const themeSlice = createSlice({
+export const globalSlice = createSlice({
   name: "global",
   initialState,
   reducers: {
@@ -15,6 +15,6 @@ export const themeSlice = createSlice({
   },
 });
 
-export const { setMode } = themeSlice.actions;
+export const { setMode } = globalSlice.actions;
 
-export default themeSlice.reducer;
+export default globalSlice.reducer;

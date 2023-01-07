@@ -31,3 +31,15 @@ ctrl+k ctrl+g
 redux toolkit to set theme
 
 ## focus main to BackEnd
+
+## Up to mongoDB
+
+create model
+add data in index.js file[root]
+=>only add data one time
+
+- client route [controller first]
+
+- go to state in redux create api endpoint => create Product Page => get api
+
+process: Model => Controller => Route => State => Component
