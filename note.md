@@ -64,3 +64,5 @@ Overview Page
 Daily Page
 Monthly Page
 Breakdown Page
+
+# Admin Page
