@@ -57,3 +57,10 @@ process: Model => Controller => Route => State => Component
 # Transactions Page
 
 - server side pagination
+
+# Sales Page
+
+Overview Page
+Daily Page
+Monthly Page
+Breakdown Page

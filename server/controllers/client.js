@@ -62,11 +62,11 @@ export const getTransactions = async (req, res) => {
       .sort(sortFormatted)
       .skip(page * pageSize)
       .limit(pageSize);
-
+    // get total number of transactions
     const total = await Transaction.countDocuments({
       name: { $regex: search, $options: "i" },
     });
-
+    // return transactions and total
     res.status(200).json({
       transactions,
       total,
@@ -78,17 +78,22 @@ export const getTransactions = async (req, res) => {
 
 export const getGeography = async (req, res) => {
   try {
+    // get all users
     const users = await User.find();
-
+    // map users to countries
     const mappedLocations = users.reduce((acc, { country }) => {
+      // get country ISO3 code
       const countryISO3 = getCountryIso3(country);
+      // if country is not in the object, add it with value 0
       if (!acc[countryISO3]) {
         acc[countryISO3] = 0;
       }
+      // increment country value
       acc[countryISO3]++;
+      // return object
       return acc;
     }, {});
-
+    // format object to array of objects
     const formattedLocations = Object.entries(mappedLocations).map(
       ([country, count]) => {
         return { id: country, value: count };
