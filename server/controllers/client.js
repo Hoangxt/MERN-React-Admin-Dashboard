@@ -49,8 +49,10 @@ export const getTransactions = async (req, res) => {
 
       return sortFormatted;
     };
+    // if sort is not null, generate sort, otherwise return empty object
     const sortFormatted = Boolean(sort) ? generateSort() : {};
 
+    // search should look like this: { "field": "userId", "search": "5f9f9f9f9f9f9f9f9f9f9f9f" }
     const transactions = await Transaction.find({
       $or: [
         { cost: { $regex: new RegExp(search, "i") } },

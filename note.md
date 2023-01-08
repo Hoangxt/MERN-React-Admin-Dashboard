@@ -53,3 +53,7 @@ process: Model => Controller => Route => State => Component
 - create customer route
 - create customer state [call api]
 - create customer component
+
+# Transactions Page
+
+- server side pagination
