@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, useTheme } from "@mui/material";
 import Header from "components/Header";
+import CustomColumnMenu from "components/DataGridCustomColumnMenu";
 import { useGetAdminsQuery } from "state/api";
 
 import { DataGrid } from "@mui/x-data-grid";
@@ -10,7 +11,7 @@ const Admin = () => {
 
   const { data, isLoading } = useGetAdminsQuery();
 
-  console.log("Data Admin", data);
+  // console.log("Data Admin", data);
 
   const columns = [
     {
@@ -89,6 +90,9 @@ const Admin = () => {
           getRowId={(row) => row._id}
           rows={data || []}
           columns={columns}
+          components={{
+            ColumnMenu: CustomColumnMenu,
+          }}
         />
       </Box>
     </Box>
