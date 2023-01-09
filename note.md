@@ -1,3 +1,5 @@
+## code node in sever remember [.js]
+
 npm i express body-parser cors dotenv helmet morgan mongoose nodemon
 
 - express: for api
@@ -66,3 +68,7 @@ Monthly Page
 Breakdown Page
 
 # Admin Page
+
+# Dashboard
+
+- create routes [general.js]
