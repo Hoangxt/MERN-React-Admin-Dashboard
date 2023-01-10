@@ -4,6 +4,7 @@ import Transaction from "../models/Transaction.js";
 
 export const getAdmins = async (req, res) => {
   try {
+    // get all admins
     const admins = await User.find({ role: "admin" }).select("-password");
     res.status(200).json(admins);
   } catch (error) {
@@ -12,9 +13,10 @@ export const getAdmins = async (req, res) => {
 };
 
 export const getUserPerformance = async (req, res) => {
+  // get user performance
   try {
     const { id } = req.params;
-
+    // get user with stats
     const userWithStats = await User.aggregate([
       { $match: { _id: new mongoose.Types.ObjectId(id) } },
       {
@@ -28,6 +30,7 @@ export const getUserPerformance = async (req, res) => {
       { $unwind: "$affiliateStats" },
     ]);
 
+    // get all transactions
     const saleTransactions = await Promise.all(
       userWithStats[0].affiliateStats.affiliateSales.map((id) => {
         return Transaction.findById(id);

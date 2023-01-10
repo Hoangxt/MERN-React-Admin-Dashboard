@@ -34,10 +34,12 @@ export const getDashboardStats = async (req, res) => {
       salesByCategory,
     } = overallStat[0];
 
+    // get this month's stats
     const thisMonthStats = overallStat[0].monthlyData.find(({ month }) => {
       return month === currentMonth;
     });
 
+    // get today's stats
     const todayStats = overallStat[0].dailyData.find(({ date }) => {
       return date === currentDay;
     });
